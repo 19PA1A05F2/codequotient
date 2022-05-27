@@ -1,0 +1,15 @@
+def findNLast(head,n):
+  # Write your code here
+  if(head==None):
+  	return -1
+  slow=head
+  fast=head
+  while(n>0):
+    if(fast.next==None and n>0):
+      return fast.data
+    fast=fast.next
+    n-=1
+  while(fast!=None):
+    slow=slow.next
+    fast=fast.next
+  return slow.data
