@@ -1,0 +1,16 @@
+def findMiddle(head):
+  # Write your code here
+  if(head==None):
+    return -1
+  slow=head
+  if(head.next==None):
+    return slow.data
+  if(head.next.next==None):
+    return head.next.data
+  fast=head.next.next
+  while(fast.next!=None and fast.next.next!=None):
+    slow=slow.next
+    fast=fast.next.next
+  if(fast.next!=None and fast.next.next==None):
+    return slow.next.next.data
+  return slow.next.data
